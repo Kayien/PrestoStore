@@ -16,7 +16,7 @@ namespace PrestoStore.Common.Entities
 
         public ICollection<Department> Departments { get; set; }
 
-        [DisplayName("Departments Number")]
+        [DisplayName("Number of States")]
         public int DepartmentsNumber => Departments == null ? 0 : Departments.Count;
 
     }
