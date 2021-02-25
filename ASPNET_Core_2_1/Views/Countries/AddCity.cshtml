@@ -1,29 +1,68 @@
-﻿@model OnSale.Common.Entities.City
+﻿@model PrestoStore.Common.Entities.City
 
 @{
     ViewData["Title"] = "Add City";
 }
 
-<h2>Add</h2>
-
-<h4>City</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="AddCity">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdDepartment" />
-
-            <partial name="_City" />
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-action="DetailsDepartment" asp-route-id="@Model.IdDepartment" class="btn btn-success">Back to List</a>
-            </div>
-        </form>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Countries</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="https://localhost:44397/Countries/index">Countries</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Add New City</strong>
+            </li>
+        </ol>
     </div>
 </div>
+<hr />
 
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Add City Options <small class="m-l-sm">Add new city</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="AddCity">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdDepartment" />
+
+                        <partial name="_City" />
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                            <a asp-action="DetailsDepartment" asp-route-id="@Model.IdDepartment" class="btn btn-success">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
