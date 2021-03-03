@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,6 +15,7 @@ namespace PrestoStore.Common.Entities
         [Required]
         public string Name { get; set; }
 
+        [JsonIgnore]
         [NotMapped]
         public int IdDepartment { get; set; }
 
